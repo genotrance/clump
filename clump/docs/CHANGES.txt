@@ -1,0 +1,4 @@
+v1.1
+----
+- Added menu item to clear textbox
+- Library is no longer a separate ZIP but part of clump.exe
