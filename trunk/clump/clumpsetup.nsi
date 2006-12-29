@@ -2,7 +2,7 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME                         "Clump"
-!define PRODUCT_VERSION                      "v1.0"
+!define PRODUCT_VERSION                      "1.0.1"
 !define PRODUCT_PUBLISHER                    "Ganesh Viswanathan"
 !define PRODUCT_WEB_SITE                     "http://www.genotrance.com"
 !define PRODUCT_UNINST_KEY                   "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
@@ -72,10 +72,10 @@ Section -Post
   WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "DisplayVersion" "${PRODUCT_VERSION}"
   WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "URLInfoAbout" "${PRODUCT_WEB_SITE}"
   WriteRegStr ${PRODUCT_UNINST_ROOT_KEY} "${PRODUCT_UNINST_KEY}" "Publisher" "${PRODUCT_PUBLISHER}"
-  
+
   ; Create Send-To link
   CreateShortCut "$SENDTO\Clump.lnk" "$INSTDIR\clump.exe"
-  
+
   ; Create batch file
   FileOpen $0 "$WINDIR\clump.bat" w
   IfErrors cont
@@ -97,10 +97,10 @@ FunctionEnd
 Section Uninstall
   ; Delete all files and directories
   RMDir /r "$INSTDIR"
-  
+
   ; Delete Send-To link
   Delete "$SENDTO\Clump.lnk"
-  
+
   ; Delete batch file
   Delete "$WINDIR\clump.bat"
 
